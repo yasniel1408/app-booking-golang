@@ -7,8 +7,8 @@ import (
 	"time"
 
 	"github.com/alexedwards/scs/v2"
+	"github.com/yasniel1408/bookings/controllers"
 	"github.com/yasniel1408/bookings/pkg/config"
-	"github.com/yasniel1408/bookings/pkg/handlers"
 	"github.com/yasniel1408/bookings/pkg/render"
 )
 
@@ -39,8 +39,8 @@ func main() {
 	app.TemplateCache = tc
 	app.UseCache = false
 
-	repo := handlers.NewRepo(&app)
-	handlers.NewHandlers(repo)
+	repo := controllers.NewRepo(&app)
+	controllers.NewHandlers(repo)
 
 	render.NewTemplates(&app)
 
