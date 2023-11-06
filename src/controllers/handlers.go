@@ -1,8 +1,6 @@
 package controllers
 
-import (
-	"github.com/yasniel1408/bookings/pkg/config"
-)
+import "github.com/yasniel1408/bookings/src/config"
 
 // Repo the repository used by the handlers
 var Repo *Repository

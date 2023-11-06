@@ -3,8 +3,7 @@ package controllers
 import (
 	"net/http"
 
-	"github.com/yasniel1408/bookings/pkg/models"
-	"github.com/yasniel1408/bookings/pkg/render"
+	"github.com/yasniel1408/bookings/src/config"
 )
 
 // About is the handler for the about page
@@ -17,7 +16,7 @@ func (m *Repository) About(w http.ResponseWriter, r *http.Request) {
 	stringMap["remote_ip"] = remoteIP
 
 	// send data to the template
-	render.RenderTemplate(w, r, "about.page.tmpl", &models.TemplateData{
+	config.RenderTemplate(w, r, "about.page.tmpl", &config.TemplateData{
 		StringMap: stringMap,
 	})
 }

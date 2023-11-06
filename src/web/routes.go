@@ -5,11 +5,10 @@ import (
 
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"
-	"github.com/yasniel1408/bookings/controllers"
-	"github.com/yasniel1408/bookings/pkg/config"
+	"github.com/yasniel1408/bookings/src/controllers"
 )
 
-func routes(app *config.AppConfig) http.Handler {
+func routes() http.Handler {
 	mux := chi.NewRouter()
 
 	//Middlewares
@@ -30,6 +29,9 @@ func routes(app *config.AppConfig) http.Handler {
 	mux.Get("/contact", controllers.Repo.Contact)
 
 	mux.Get("/make-reservation", controllers.Repo.Reservation)
+	mux.Post("/make-reservation", controllers.Repo.PostReservation)
+
+	mux.Get("/reservation-summary", controllers.Repo.ReservationSummary)
 
 	// FileServer
 	fileServer := http.FileServer(http.Dir("./static/"))

@@ -1,4 +1,6 @@
-package models
+package config
+
+import "github.com/yasniel1408/bookings/src/config/forms"
 
 // TemplateData holds data sent from handlers to templates
 type TemplateData struct {
@@ -10,4 +12,5 @@ type TemplateData struct {
 	Flash     string
 	Warning   string
 	Error     string
+	Form      *forms.Form
 }

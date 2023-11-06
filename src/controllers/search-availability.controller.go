@@ -6,13 +6,12 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/yasniel1408/bookings/pkg/models"
-	"github.com/yasniel1408/bookings/pkg/render"
+	"github.com/yasniel1408/bookings/src/config"
 )
 
 // Availability renders the search availability page
 func (m *Repository) Availability(w http.ResponseWriter, r *http.Request) {
-	render.RenderTemplate(w, r, "search-availability.page.tmpl", &models.TemplateData{})
+	config.RenderTemplate(w, r, "search-availability.page.tmpl", &config.TemplateData{})
 }
 
 // PostAvailability renders the search availability page

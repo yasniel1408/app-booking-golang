@@ -3,8 +3,7 @@ package controllers
 import (
 	"net/http"
 
-	"github.com/yasniel1408/bookings/pkg/models"
-	"github.com/yasniel1408/bookings/pkg/render"
+	"github.com/yasniel1408/bookings/src/config"
 )
 
 // Home is the handler for the home page
@@ -12,5 +11,5 @@ func (m *Repository) Home(w http.ResponseWriter, r *http.Request) {
 	remoteIP := r.RemoteAddr
 	m.App.Session.Put(r.Context(), "remote_ip", remoteIP)
 
-	render.RenderTemplate(w, r, "home.page.tmpl", &models.TemplateData{})
+	config.RenderTemplate(w, r, "home.page.tmpl", &config.TemplateData{})
 }
