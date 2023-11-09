@@ -8,7 +8,7 @@ import (
 	"github.com/yasniel1408/bookings/src/controllers"
 )
 
-func routes() http.Handler {
+func Routes() http.Handler {
 	mux := chi.NewRouter()
 
 	//Middlewares

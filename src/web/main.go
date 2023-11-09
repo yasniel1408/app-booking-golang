@@ -20,7 +20,7 @@ var session *scs.SessionManager
 
 // main is the main function
 func main() {
-	err := run()
+	err := Run()
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -29,13 +29,13 @@ func main() {
 
 	server := &http.Server{
 		Addr:    portNumber,
-		Handler: routes(),
+		Handler: Routes(),
 	}
 
 	server.ListenAndServe()
 }
 
-func run() error {
+func Run() error {
 	// what am I going to put in the session
 	gob.Register(models.Reservation{})
 
